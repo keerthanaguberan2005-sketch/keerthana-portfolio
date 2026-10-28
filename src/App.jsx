@@ -45,8 +45,7 @@ const projects = [
       'Database-backed architecture',
     ],
     stack: ['React', 'FastAPI', 'SQLAlchemy', 'PostgreSQL'],
-    github: 'https://github.com/keerthanaguberan2005-sketch/todo-project',
-    demo: '',
+    demo: 'https://mytask-todo-project.netlify.app/',
     visual: 'todo',
   },
   {
@@ -104,37 +103,24 @@ function SkillCard({ item }) {
 function ProjectPreview({ type }) {
   if (type === 'todo') {
     return (
-      <div className="preview-shell">
-        <div className="preview-topbar">
-          <div className="preview-dots">
-            <i />
-            <i />
-            <i />
-          </div>
-          <span>todo-dashboard.jsx</span>
-        </div>
+      <div className="mytask-gallery" aria-label="MyTask application screenshots">
+        <figure className="mytask-shot">
+          <img
+            src="/mytask/mytask-tasks.png"
+            alt="MyTask task list screen"
+            loading="lazy"
+          />
+          <figcaption>Task list</figcaption>
+        </figure>
 
-        <div className="todo-preview-content">
-          <p className="preview-eyebrow">YOUR WORKSPACE</p>
-          <h4>My Tasks<span>.</span></h4>
-          <p className="preview-subtitle">Stay focused. Get things done.</p>
-
-          <div className="task-row">
-            <span className="task-check">✓</span>
-            <span>Plan daily priorities</span>
-            <small>DONE</small>
-          </div>
-          <div className="task-row">
-            <span className="task-check" />
-            <span>Build REST API</span>
-            <small>IN PROGRESS</small>
-          </div>
-          <div className="task-row">
-            <span className="task-check" />
-            <span>Review project code</span>
-            <small>TODO</small>
-          </div>
-        </div>
+        <figure className="mytask-shot">
+          <img
+            src="/mytask/mytask-form.png"
+            alt="MyTask task entry form screen"
+            loading="lazy"
+          />
+          <figcaption>Add and manage tasks</figcaption>
+        </figure>
       </div>
     );
   }
@@ -152,7 +138,9 @@ function ProjectPreview({ type }) {
 
       <div className="interview-preview-content">
         <p className="preview-eyebrow">YOUR CAREER WORKSPACE</p>
-        <h4>Preparation <span>Dashboard</span></h4>
+        <h4>
+          Preparation <span>Dashboard</span>
+        </h4>
 
         <div className="progress-panel">
           <div>
@@ -211,12 +199,6 @@ function ProjectCard({ project }) {
       </div>
 
       <div className="project-links">
-        {project.github && (
-          <a href={project.github} target="_blank" rel="noreferrer">
-            GitHub Repository <span>↗</span>
-          </a>
-        )}
-
         {project.demo && (
           <a href={project.demo} target="_blank" rel="noreferrer">
             Live Website <span>↗</span>
@@ -236,6 +218,7 @@ function App() {
         </a>
 
         <nav className="nav-links" aria-label="Main navigation">
+          <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
@@ -278,8 +261,19 @@ function App() {
               <a className="button button-primary" href="#projects">
                 Explore My Projects <span>↗</span>
               </a>
+
               <a className="button button-secondary" href="#contact">
                 Get In Touch
+              </a>
+
+              <a
+                className="button button-secondary"
+                href="/Keerthana_Resume.pdf"
+                target="_blank"
+                rel="noreferrer"
+                download="Keerthana_Resume.pdf"
+              >
+                Download Resume <span aria-hidden="true">↓</span>
               </a>
             </div>
 
@@ -290,7 +284,10 @@ function App() {
             </div>
           </div>
 
-          <div className="hero-visual" aria-label="Python developer code illustration">
+          <div
+            className="hero-visual"
+            aria-label="Python developer code illustration"
+          >
             <div className="visual-orbit orbit-one" />
             <div className="visual-orbit orbit-two" />
 
@@ -349,23 +346,15 @@ function App() {
             <p>
               I'm Keerthana Guberan, a 2025 B.Sc. Physics graduate and
               Python Full Stack Development course completer. I'm looking
-              for an opportunity to begin my software development career. 
-              {/* I'm Keerthana Guberan, a 2025 B.Sc. Physics graduate and Python Full Stack Development course completer, aspiring to build a career in software development. */}
+              for an opportunity to begin my software development career.
             </p>
 
             <p>
               I enjoy building practical web applications, working with
-               APIs and databases, and continuously improving my coding
+              APIs and databases, and continuously improving my coding
               skills. I'm eager to learn from experienced developers and
               contribute to real-world projects.
-             
-
-             {/* I have a foundation in Python, FastAPI, React.js, SQL, and PostgreSQL, and I enjoy building practical web applications that solve real-world problems. Through hands-on projects like Todo Application and InterviewFlow, I've been developing my skills in frontend development, backend APIs, and database integration. */}
             </p>
-
-            {/* <p>
-              I'm passionate about continuous learning, improving my problem-solving abilities, and exploring new technologies. I'm looking for an opportunity as a Python Developer or Junior Full Stack Developer where I can contribute to real-world projects, learn from experienced developers, and grow as a software professional.
-            </p> */}
 
             <div className="about-highlights">
               <div className="highlight-card">
@@ -437,34 +426,16 @@ function App() {
             hear from you.
           </p>
 
-          {/* <a
+          <a
+            href="mailto:keerthanaguberan2005@gmail.com?subject=Portfolio%20Contact%20-%20Python%20Developer"
             className="button button-primary contact-button"
-            href="mailto:YOUR_EMAIL@example.com"
           >
-            Email Me <span>↗</span>
-          </a> */}
-
-          
-<a
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=keerthanaguberan2005@gmail.com&su=Portfolio%20Contact%20-%20Python%20Developer"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="button button-primary contact-button"
->
-  Email Me ↗ <span></span>
-</a>
-
+            Email Me <span aria-hidden="true">↗</span>
+          </a>
 
           <div className="social-links">
             <a
-              href="https://github.com/keerthanaguberan2005-sketch"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub ↗
-            </a>
-            <a
-              href="https://www.linkedin.com/in/keerthana-g-1480793b0/?isSelfProfile=true"
+              href="https://www.linkedin.com/in/keerthana-g-1480793b0/"
               target="_blank"
               rel="noreferrer"
             >
